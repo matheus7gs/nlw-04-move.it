@@ -1,12 +1,29 @@
 import { useContext } from 'react';
 import { ChallengesContext } from '../contexts/ChallengesContext'
+import { CountdownContext } from '../contexts/CountdownContext'
 
 import styles from '../styles/components/ChallengeBox.module.css'
 
 export function ChallengeBox() {
-  const { activeChallenge, resetChallenge } = useContext(ChallengesContext);
+  const { 
+    activeChallenge, 
+    resetChallenge, 
+    completedChallenge 
+  } = useContext(ChallengesContext);
 
-  return (
+  const { isActive, resetCountdown } = useContext(CountdownContext);
+
+  function handleChallengeSucceeded() {
+    completedChallenge()
+    resetCountdown()
+  }
+
+  function handleChallengeFailed() {
+    resetChallenge();
+    resetCountdown();
+  }
+
+  return ( 
     <div className={styles.challengeBoxContainer}>
       { activeChallenge ? (
         <div className={styles.challengeActive}>
@@ -22,19 +39,28 @@ export function ChallengeBox() {
             <button 
               type="button"
               className={styles.challengeFailedButton}
-              onClick={resetChallenge}
+              onClick={handleChallengeFailed}
             >
               Falhei
             </button>
             <button 
               type="button"
               className={styles.challengeSucceededButton}
+              onClick={handleChallengeSucceeded}
             >
               Completei
             </button>
           </footer>
         </div>
-      ) : (false ? (
+      ) : (isActive ? (
+            <div className={styles.InitCicleActive}>
+              <strong>Finalize um ciclo para receber desafios</strong>
+              <p>
+                <img src="icons/level-up.svg" alt="level up"/>
+                Complete-os e ganhe experiência e avance de leve.
+              </p>
+            </div>
+          ) : (
             <div className={styles.challengeNotActive}>
               <strong>Inicie um ciclo para receber desafios</strong>
               <p>
@@ -42,18 +68,8 @@ export function ChallengeBox() {
                 Avance de level completando os desafios.
               </p>
             </div>
-          
-          ) : (
-              <div className={styles.InitCicleActive}>
-                <strong>Finalize um ciclo para receber desafios</strong>
-                <p>
-                  <img src="icons/level-up.svg" alt="level up"/>
-                  Complete-os e ganhe experiência e avance de leve.
-                </p>
-              </div>
-            )
           )
-      }
+        )}
     </div>
   )
 }

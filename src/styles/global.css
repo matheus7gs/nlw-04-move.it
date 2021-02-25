@@ -1,7 +1,8 @@
-/* *{
-  background: #f2f3f5;
-  color: #666;
-} */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 :root {
   --white: #fff;
@@ -13,19 +14,25 @@
   --red: #E83F5B;
   --green: #4CD62B;
   --blue: #5965E0;
-  --blue-dark: #4953B8;
+  --blue-dark: #4953b8;
   --blue-twitter: #2AA9E0;
 }
 
-@media(max-width:1080px) {
+@media(max-width: 1080px) {
   html {
     font-size: 93.75%
   }
-}
+} 
 
-@media(max-width:720px) {
+@media(max-width: 720px) {
   html {
     font-size: 87.5%
+  }
+}
+
+@media(max-width: 540px) {
+  html {
+    font-size: 81.25%
   }
 }
 
