@@ -123,8 +123,6 @@
   font-weight: 600;
 
   transition: filter 0.2s;
-
-  outline: none;
 }
 
 .challengeActive footer button.challengeFailedButton {

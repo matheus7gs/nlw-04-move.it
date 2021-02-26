@@ -1,5 +1,5 @@
 <p align="center">
-  <img alt="Moveit" src="./utills/.github/icon.svg" width="120px">
+  <img alt="Moveit" src="./utills/.github/logo.svg" width="120px">
 </p>
 
 <p align="center">
@@ -49,7 +49,7 @@ Trilha react liderada por  **[Diego Fernandes](https://github.com/diego3g)**.
 
 Layout do projeto:
 
-- [Layout Web](https://www.figma.com/file/ge20pu3ofMOKoliUyKx1Nl/Move.it-1.0) 
+- [Layout](https://www.figma.com/file/ge20pu3ofMOKoliUyKx1Nl/Move.it-1.0) 
 
 Será nescessário uma conta no [Figma](http://figma.com/) para acessá-lo.
 <br>
